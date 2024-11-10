@@ -14,6 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+      <meta name="google-site-verification" content="f13CGsQcX7QJlhmEZedh6snS20SgOET0QgtPwd0wtI0" />
+      </head>
       <body>
         <div className="min-h-screen relative overflow-hidden flex flex-col">
           <div className="gradient-sphere top-[20%] right-[10%]"></div>
