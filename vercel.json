@@ -19,10 +19,5 @@
         "src": "/",
         "dest": "/"
       }
-    ],
-    "fallbacks": {
-      "unseal": "/unseal",
-      "share": "/share"
-    }
-  }
-  
+    ]
+  }  
