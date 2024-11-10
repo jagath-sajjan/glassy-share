@@ -98,13 +98,13 @@ export default function SharePage() {
           <li className="flex items-start">
             <span className="mr-2">•</span>
             <span>
-              <strong className="text-white">Reads:</strong> Set the number of times the secret can be viewed (max 10) before it's automatically deleted.
+              <strong className="text-white">Reads:</strong> Set the number of times the secret can be viewed (max 10) before it&apos;s automatically deleted.
             </span>
           </li>
           <li className="flex items-start">
             <span className="mr-2">•</span>
             <span>
-              <strong className="text-white">TTL (Time To Live):</strong> Set the number of days (max 7) the secret will exist before it's automatically deleted, regardless of the number of reads.
+              <strong className="text-white">TTL (Time To Live):</strong> Set the number of days (max 7) the secret will exist before it&apos;s automatically deleted, regardless of the number of reads.
             </span>
           </li>
         </ul>
