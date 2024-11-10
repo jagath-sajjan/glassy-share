@@ -1,8 +1,28 @@
 {
+    "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/next"
+      }
+    ],
     "routes": [
-      "/",
-      "/share",
-      "/unseal"
-    ]
+      {
+        "src": "/unseal/(.*)",
+        "dest": "/unseal"
+      },
+      {
+        "src": "/share",
+        "dest": "/share"
+      },
+      {
+        "src": "/",
+        "dest": "/"
+      }
+    ],
+    "fallbacks": {
+      "unseal": "/unseal",
+      "share": "/share"
+    }
   }
   
