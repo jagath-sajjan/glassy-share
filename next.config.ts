@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   serverExternalPackages: ['redis'],
-  webpack: (config, { dev, isServer }) => {
+  webpack: (config: import('webpack').Configuration, { dev, isServer }: { dev: boolean, isServer: boolean }) => {
     config.cache = true; // Enable Webpack cache
 
     if (!dev && !isServer) {
