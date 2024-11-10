@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Glassy Share - Secure Secret Sharing',
-  description: 'Share your secrets securely with a glassy touch',
+  description: 'Share your .env variables and secrets securely with a glassy touch',
 }
 
 export default function RootLayout({
