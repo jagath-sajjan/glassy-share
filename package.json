@@ -9,27 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.18",
-    "net": "latest",
+    "@heroicons/react": "^2.1.5",
     "next": "^15.0.3",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "redis": "^4.6.7",
-    "tls": "latest",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "redis": "^4.7.0",
     "uuid": "^11.0.2",
-    "webpack": "^5.96.1"
+    "webpack": "^5.96.1",
+    "tls": "latest",
+    "net": "latest"
   },
   "devDependencies": {
-    "@types/node": "^22",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@types/uuid": "^9.0.2",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/uuid": "^10.0.0",
     "@types/webpack": "^5.28.5",
-    "autoprefixer": "10.4.14",
-    "eslint": "^9",
-    "eslint-config-next": "15.0.3",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.14",
-    "typescript": "^5"
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.14.0",
+    "eslint-config-next": "^15.0.3",
+    "postcss": "^8.4.47",
+    "tailwindcss": "3.0",
+    "typescript": "5.6.3"
   }
 }
