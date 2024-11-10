@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-dark: #0f1624;
+  --primary-purple: #6e3adc;
+  --accent-purple: #9d6dff;
+  --glass-background: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-color: #ffffff;
+  --code-bg: #0f1624;
+  --code-border: rgba(255, 255, 255, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--background-dark)] text-[var(--text-color)] min-h-screen overflow-x-hidden font-['Space_Grotesk',sans-serif];
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-[var(--glass-background)] backdrop-blur-md border border-[var(--glass-border)] rounded-lg shadow-xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-white to-[var(--accent-purple)] bg-clip-text text-transparent;
+  }
+
+  .cta-button {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md text-sm font-medium tracking-wide transition-all duration-300 relative overflow-hidden;
+  }
+
+  .cta-button::before {
+    content: '';
+    @apply absolute inset-0 bg-white/10 -translate-x-full transition-transform duration-300 ease-out;
+  }
+
+  .cta-button:hover::before {
+    @apply translate-x-0;
+  }
+
+  .cta-button.primary {
+    @apply bg-[var(--primary-purple)] text-white border-none;
+  }
+
+  .cta-button.secondary {
+    @apply bg-transparent text-white border border-[var(--primary-purple)];
+  }
+
+  .glass-input {
+    @apply glass-effect bg-transparent px-4 py-3 w-full outline-none transition-all duration-300 ease-in-out text-white placeholder-white/50;
+  }
+
+  .glass-input:focus {
+    @apply border-[var(--accent-purple)];
+    box-shadow: 0 0 20px rgba(157, 109, 255, 0.2);
+  }
+
+  .tooltip {
+    @apply absolute z-10 p-2 text-sm text-white bg-gray-800 rounded-md shadow-lg opacity-0 transition-opacity duration-300 ease-in-out pointer-events-none;
+  }
+
+  .tooltip-trigger:hover .tooltip {
+    @apply opacity-100;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(50px, -50px) rotate(180deg); }
+  66% { transform: translate(-50px, 50px) rotate(360deg); }
+}
+
+.gradient-sphere {
+  @apply absolute w-[600px] h-[600px] rounded-full filter blur-[60px] opacity-50;
+  background: radial-gradient(circle, var(--primary-purple) 0%, rgba(110, 58, 220, 0) 70%);
+  animation: float 20s ease-in-out infinite;
+}
+
+.gradient-sphere.secondary {
+  @apply w-[400px] h-[400px];
+  background: radial-gradient(circle, var(--accent-purple) 0%, rgba(157, 109, 255, 0) 70%);
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+.grid-background {
+  @apply absolute inset-0 opacity-50;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(10px, 9999px, 31px, 0);
+    transform: skew(0.6deg);
+  }
+  100% {
+    clip: rect(62px, 9999px, 87px, 0);
+    transform: skew(0.7deg);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(65px, 9999px, 99px, 0);
+    transform: skew(0.8deg);
+  }
+  100% {
+    clip: rect(44px, 9999px, 53px, 0);
+    transform: skew(0.6deg);
+  }
+}
