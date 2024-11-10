@@ -8,7 +8,7 @@ export default function Home() {
         GLASSY SHARE
       </h1>
       <p className="subtitle text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-        Share your .env variables and secrets securely with our glass-morphism inspired encryption system
+        Share your .env variables and secrets securely with our enigma inspired encryption system
       </p>
       <div className="cta-container flex gap-4 justify-center">
         <Link href="/share" className="cta-button primary">
